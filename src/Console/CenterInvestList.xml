@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<companies>
+  <company>
+      <name lang="ru">Центр-инвест</name>
+      <name-other lang="ru">Дополнительный офис Садовое кольцо</name-other>
+      <shortname lang="ru">Центр-инвест</shortname>
+      <address lang="ru">г Москва, Москва, Земляной вал, д.50Ас2</address>
+      <country lang="ru">Россия</country>
+      <working-time lang="ru">понедельник-пятница 9:00-18:00</working-time>
+      <coordinates>
+        <lat>55.750864</lat>
+        <lon>37.654727</lon>
+      </coordinates>
+      <phone>
+        <type>phone</type>
+        <number>+7 (495) 640-23-36</number>
+        <info>Кредиты</info>
+      </phone>
+      <phone>
+        <type>phone</type>
+        <number>+7 (495) 660-45-03</number>
+        <info>Касса</info>
+      </phone>
+      <phone>
+        <type>phone</type>
+        <number>+7 (495) 660-45-04</number>
+        <info>Директор</info>
+      </phone>
+      <phone>
+        <type>phone</type>
+        <number>8 (863) 200-00-00</number>
+        <info>Основной</info>
+      </phone>
+      <phone>
+        <type>phone</type>
+        <number>8 (800) 200-99-29</number>
+        <info>Основной</info>
+    </phone>
+  </company>
+  <company>
+      <name lang="ru">Центр-инвест</name>
+      <name-other lang="ru">SATM6700</name-other>
+      <shortname lang="ru">Центр-инвест</shortname>
+      <address lang="ru">г Москва, г. Москва, ул. Земляной Вал, 50А/8 стр 2</address>
+      <country lang="ru">Россия</country>
+      <address-add lang="ru">Бизнес центр</address-add>
+      <phone>
+        <type>phone</type>
+        <number>8 (800) 200-91-09</number>
+      </phone>
+      <working-time lang="ru">08:00-22:00</working-time>
+      <coordinates>
+        <lat>55.75129</lat>
+        <lon>37.65417</lon>
+      </coordinates>
+  </company>
+  <company>
+      <name lang="ru">Центр-инвест, платежный терминал</name>
+      <shortname lang="ru">Центр-инвест</shortname>
+      <address lang="ru">г Москва, г. Москва, ул. Земляной Вал, 50А/8, стр. 2</address>
+      <country lang="ru">Россия</country>
+      <address-add lang="ru">Кред-кассовый офис</address-add>
+      <phone>
+        <type>phone</type>
+        <number>8 (800) 200-99-29</number>
+      </phone>
+      <working-time lang="ru">понедельник-пятница 9:00-19:00,пер 14:00-15:00</working-time>
+      <coordinates>
+        <lat>55.750866</lat>
+        <lon>37.654797</lon>
+      </coordinates>
+  </company>
+</companies>
