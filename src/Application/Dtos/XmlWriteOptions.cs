@@ -1,0 +1,1 @@
+public record XmlWriteOptions(string Path);

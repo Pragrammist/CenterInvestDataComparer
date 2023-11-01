@@ -1,26 +1,23 @@
-﻿using System.Xml.Serialization;
-XmlSerializer serializer = new XmlSerializer(typeof(Companies));
-var currentDir = Directory.GetCurrentDirectory();
-Companies companies;
-using (StringReader reader = new StringReader(await File.ReadAllTextAsync(Path.Combine(currentDir, "CenterInvestList.xml"))))
-{
-    var deserializedData = serializer.Deserialize(reader) ?? throw new NullReferenceException("Configuration Exception. Current data is null");;;
-    companies = (Companies)deserializedData;
-}
-
+﻿
 var builder = new ConfigurationBuilder()
-                .SetBasePath(currentDir)
-                .AddJsonFile("appsettings.json", optional: false)
-                .AddXmlFile("CenterInvestList.xml", optional: false);
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
 IConfiguration config = builder.Build();
 
-var yandexMapCred = config.GetSection("Urls")?.GetSection("YandexMapCenterInvestOrg")?.Get<YandexMapCenterInvestUrl>() 
+var yandexMapCred = config.GetSection("YandexMapCenterInvestOrg")?.Get<YandexMapCenterInvestUrlDto>() 
     ?? throw new NullReferenceException("Configuration Exception. Yandex credentials is null");
 
-DataComparerService d =  new DataComparerService(yandexMapCred);
+var actualDataXmplPath = config.GetSection("ActualDataCenterInvestOrg")?.Get<ActualDataXmlPathDto>() 
+    ?? throw new NullReferenceException("Configuration Exception. Actual data source not found");
+
+var xmlWriteOptions = config.GetSection("CompareResultOutput")?.Get<XmlWriteOptions>() 
+    ?? throw new NullReferenceException("Configuration Exception. Xml no not found");
+
+ICompareWriter compareWriter = new CompareWriter(yandexMapCred, actualDataXmplPath, xmlWriteOptions);
+//IDataComparerService comparerService =  new DataComparerService(yandexMapCred, actualDataXmplPath);
 
 
 
-var result = await d.CompareAsync(companies);
-Console.WriteLine(yandexMapCred.UrlWithApiKey);
+await compareWriter.CompareAndWrite();
+

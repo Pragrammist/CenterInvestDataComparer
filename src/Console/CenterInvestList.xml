@@ -8,8 +8,8 @@
       <country lang="ru">Россия</country>
       <working-time lang="ru">понедельник-пятница 9:00-18:00</working-time>
       <coordinates>
-        <lat>55.750864</lat>
-        <lon>37.654727</lon>
+        <lat>55.750883</lat>
+        <lon>37.654871</lon>
       </coordinates>
       <phone>
         <type>phone</type>
@@ -19,6 +19,11 @@
       <phone>
         <type>phone</type>
         <number>+7 (495) 660-45-03</number>
+        <info>Касса</info>
+      </phone>
+      <phone>
+        <type>phone</type>
+        <number>+7 (496) 660-45-03</number>
         <info>Касса</info>
       </phone>
       <phone>
