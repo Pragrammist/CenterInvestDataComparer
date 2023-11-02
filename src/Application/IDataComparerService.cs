@@ -15,6 +15,12 @@ public class DataComparerService : IDataComparerService
         _actualDataService = new ActualDataSource(actualDataXmlPath);
         _mapService = new MapService(yandexMapCredentials);
     }
+
+    public DataComparerService(IMapService mapService, IActualDataSource actualDataService)
+    {
+        _mapService = mapService;
+        _actualDataService = actualDataService;
+    }
     public async Task<CompanyDataDifferenceDto> CompareAsync()
     {
         var dataFromApi = await _mapService.GetDataFromYandexApi();
